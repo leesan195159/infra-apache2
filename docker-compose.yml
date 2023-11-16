@@ -20,7 +20,7 @@ services:
       image: isan19973788/apache
       container_name: apache
       volumes:
-        - ./httpd.conf:/etc/apache2/apache2.conf
+        - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
       ports:
         - 83:83
       restart: always
