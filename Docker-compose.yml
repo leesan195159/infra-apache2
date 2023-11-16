@@ -1,0 +1,32 @@
+version: '3'
+services:
+  apache:
+    image: httpd:latest
+    volumes:
+      - httpd.conf:/usr/local/apache2/conf/httpd.conf
+    ports:
+      - "83:83"
+    restart: always
+    depends_on:
+      - fastapi
+    networks:
+      - web-network
+
+  fastapi:
+    image: isan19973788/fastapi
+    # build:
+    #   dockerfile: Dockerfile
+    container_name: fastapi
+    restart: always
+    # volumes:
+    #   - ./app:/app
+    # expose:
+    #   - "8000"
+    ports:
+      - 8000:8000
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    driver: bridge
