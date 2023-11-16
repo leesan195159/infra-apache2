@@ -1,18 +1,6 @@
 version: '3'
 services:
-  apache:
-      image: httpd:latest
-      container_name: apache
-      volumes:
-        - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
-      ports:
-        - 83:83
-      restart: always
-      depends_on:
-        - fastapi
-      networks:
-        - web-network
-
+  
   fastapi:
     image: isan19973788/fastapi
     # build:
@@ -28,7 +16,19 @@ services:
     networks:
       - web-network
 
-  
+  apache:
+      image: httpd:latest
+      container_name: apache
+      volumes:
+        - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+      ports:
+        - 83:83
+      restart: always
+      depends_on:
+        - fastapi
+      networks:
+        - web-network
+        
 networks:
   web-network:
     driver: bridge
