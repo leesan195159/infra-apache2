@@ -19,10 +19,8 @@ services:
   apache:
       image: isan19973788/apache2
       container_name: apache2
-      volumes:
-        - ./apache2.conf:/etc/apache2/apache2.conf
       ports:
-        - 83:83
+        - 84:84
       restart: always
       depends_on:
         - fastapi
