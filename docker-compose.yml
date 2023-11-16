@@ -17,7 +17,7 @@ services:
       - web-network
 
   apache:
-      image: isan19973788/apache
+      image: isan19973788/apache2
       container_name: apache
       volumes:
         - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
