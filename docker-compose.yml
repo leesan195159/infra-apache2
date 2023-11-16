@@ -6,7 +6,7 @@ services:
       volumes:
         - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
       ports:
-        - 8000:83
+        - 83:83
       # restart: always
       depends_on:
         - fastapi
