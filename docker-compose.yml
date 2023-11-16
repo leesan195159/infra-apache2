@@ -17,6 +17,7 @@ services:
 
   apache:
     image: httpd:latest
+    container_name: apache
     volumes:
       - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
     ports:
