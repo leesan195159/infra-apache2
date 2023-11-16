@@ -17,7 +17,7 @@ services:
       - web-network
 
   apache:
-      image: httpd:latest
+      image: isan19973788/apache
       container_name: apache
       volumes:
         - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
@@ -28,7 +28,7 @@ services:
         - fastapi
       networks:
         - web-network
-        
+
 networks:
   web-network:
     driver: bridge
