@@ -1,5 +1,5 @@
 # 사용할 베이스 이미지 선택 (예: Ubuntu)
-FROM ubuntu/latest
+FROM ubuntu
 
 # 패키지 업데이트 및 Apache 설치
 RUN apt-get update && apt-get install -y apache2
