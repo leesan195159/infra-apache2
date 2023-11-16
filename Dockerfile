@@ -5,4 +5,4 @@ FROM ubuntu
 RUN apt-get update && apt-get install -y apache2
 COPY apache2.conf /etc/apache2/apache2.conf
 # Apache를 foreground 모드로 실행
-CMD apache2-foreground
+CMD ["apachectl", "-D", "FOREGROUND"]
