@@ -6,7 +6,7 @@ services:
       - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
     ports:
       - "83:83"
-    restart: always
+    # restart: always
     depends_on:
       - fastapi
     networks:
