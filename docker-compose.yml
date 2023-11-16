@@ -3,7 +3,7 @@ services:
   apache:
     image: httpd:latest
     volumes:
-      - httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
     ports:
       - "83:83"
     restart: always
